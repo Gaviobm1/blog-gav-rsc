@@ -1,0 +1,25 @@
+.clickable {
+  display: block;
+  transform: translateY(-20%);
+  background-color: hsl(20deg 100% 50%);
+  margin: -0.5rem;
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  transition: transform 600ms;
+}
+
+.base {
+  font-size: var(--font-size);
+  color: hsl(0deg 100% 100%);
+  background-color: hsl(20deg 100% 60%);
+  border: none;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.base:hover .clickable,
+.base:focus .clickable {
+  transform: translateY(-25%);
+  transition: transform 200ms;
+}

@@ -1,0 +1,33 @@
+.wrapper {
+  text-decoration: none;
+  font-size: 1.2rem;
+  outline-offset: 4px;
+  position: relative;
+}
+
+.navlink:hover,
+.navlink:focus {
+  color: var(--hover-color);
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border: none;
+
+  @media (max-width: 550px) {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+.glowicon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(var(--logo-blur));
+}

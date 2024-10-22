@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.content {
+  padding: var(--padding);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--color);
+  color: var(--color);
+  outline-offset: var(--outline-offset);
+}

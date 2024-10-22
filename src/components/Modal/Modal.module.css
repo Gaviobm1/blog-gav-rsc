@@ -1,0 +1,11 @@
+.mobileButton {
+  background: transparent;
+  border: none;
+  color: var(--color);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: hsl(0deg 100% 0% / 0.5);
+}

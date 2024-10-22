@@ -1,0 +1,59 @@
+.wrapper {
+  align-self: center;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 2rem 0.9rem 2rem;
+  background: transparent;
+  color: var(--font-color);
+  border-bottom: var(--border);
+}
+
+.wrapper:last-child {
+  border-bottom: none;
+}
+
+.heading {
+  font-family: var(--recursive);
+  font-size: 1.375rem;
+}
+
+.abstract {
+  max-width: 59ch;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.explicitLink {
+  font-weight: 600;
+  display: flex;
+  gap: 0.8rem;
+  align-items: baseline;
+  width: max-content;
+}
+
+.explicitLink svg {
+  align-self: flex-end;
+  transition: transform 600ms;
+}
+
+.explicitLink:hover,
+.explicitLink:focus {
+  font-weight: 700;
+}
+
+.explicitLink:hover svg {
+  transform: scale(1.2);
+  transition: transform 200ms;
+}
+
+.published {
+  font-family: var(--recursive);
+  font-weight: 200;
+  font-style: italic;
+}

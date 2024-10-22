@@ -1,0 +1,8 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  grid-area: content;
+  gap: 1rem;
+  align-items: center;
+}

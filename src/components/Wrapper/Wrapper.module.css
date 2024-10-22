@@ -1,0 +1,18 @@
+.wrapper {
+  font-family: var(--raleway);
+  color: var(--color);
+  display: grid;
+  grid-template-areas:
+    "header"
+    "content";
+  grid-template-rows: auto 1fr;
+  background: var(--background-wrapper);
+  gap: 2rem;
+  isolation: isolate;
+}
+
+@media (max-width: 550px) {
+  .wrapper {
+    gap: 1rem;
+  }
+}
