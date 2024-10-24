@@ -39,8 +39,10 @@ async function getBlogMDX(id: number) {
   });
   if (record) {
     const { post, href, published } = record;
-    const { data, content } = matter(post);
-    return { data, content, href, published };
+    if (post) {
+      const { data, content } = matter(post);
+      return { data, content, href, published };
+    }
   }
 }
 
