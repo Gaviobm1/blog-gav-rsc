@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import SkeletonCardList from "@/Skeletons/SkeletonCardList/SkeletonCardList";
-import { posts } from "@/data";
 import { PageSearchParams } from "./types";
+import CardListPaginated from "@/components/CardListPaginated/CardListPaginated";
 
 const CardList = dynamic(() => import("@/components/CardList/CardList"), {
   loading: () => <SkeletonCardList />,
@@ -12,5 +12,5 @@ export default function Home({
 }: {
   searchParams: PageSearchParams;
 }) {
-  return <CardList data={posts} />;
+  return <CardListPaginated searchParams={searchParams} resultsPerPage={3} />;
 }

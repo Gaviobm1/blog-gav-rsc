@@ -1,9 +1,9 @@
 .wrapper {
   align-self: center;
-  max-width: 90%;
+  width: var(--width);
   display: flex;
   flex-direction: column;
-  padding: 0.5rem 2rem 0.9rem 2rem;
+  padding: 0.5rem 0rem 0.9rem 0rem;
   background: transparent;
   color: var(--font-color);
   border-bottom: var(--border);
@@ -56,4 +56,10 @@
   font-family: var(--recursive);
   font-weight: 200;
   font-style: italic;
+}
+
+@media (max-width: 550px) {
+  .wrapper {
+    padding: 0.5rem 0rem 0.9rem 0rem;
+  }
 }

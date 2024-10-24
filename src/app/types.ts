@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FormEventHandler } from "react";
 
 export interface S3Params {
   Bucket: string | undefined;
@@ -11,17 +11,36 @@ export interface CardProps {
   title: string;
   abstract: string;
   href: string;
-  created_on: Date;
+  published: Date;
 }
+
+export interface PostType {
+  id: number;
+  post: string;
+  href: string;
+  published: Date;
+}
+
 export interface PageSearchParams {
   page: string;
 }
 
 export interface BlogParam {
-  blogSlug: string;
+  id: number;
 }
 
 export interface IconProps {
   href?: string;
   children: React.ReactNode;
+}
+
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
+  id: string;
+  label: string;
+  type?: string;
+}
+
+export interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {
+  onSubmit?: FormEventHandler<HTMLFormElement>;
 }

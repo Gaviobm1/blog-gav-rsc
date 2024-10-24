@@ -3,8 +3,7 @@ import PageButtons from "../PageButtons/PageButtons";
 import React, { Suspense } from "react";
 import styles from "./CardListPaginated.module.css";
 import { PageSearchParams } from "@/app/types";
-import { prisma } from "../../../db/clients";
-import { getPostCount, getBlogList } from "@/helpers/serverActions";
+import { getPostCount, getAllPosts } from "@/helpers/serverActions";
 
 export default async function CardListPaginated({
   searchParams,
@@ -17,7 +16,7 @@ export default async function CardListPaginated({
   const toSkip = (current - 1) * resultsPerPage;
   const [postCount, posts] = await Promise.all([
     getPostCount(),
-    getBlogList(toSkip, resultsPerPage),
+    getAllPosts(toSkip, resultsPerPage),
   ]);
 
   const pages = Math.ceil(postCount / resultsPerPage);

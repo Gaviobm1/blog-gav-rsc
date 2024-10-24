@@ -1,25 +1,31 @@
-.clickable {
-  display: block;
-  transform: translateY(-20%);
-  background-color: hsl(20deg 100% 50%);
-  margin: -0.5rem;
-  border-radius: var(--border-radius);
-  padding: 0.5rem;
-  transition: transform 600ms;
+.btnWrapper {
+  position: relative;
+  width: 25%;
 }
 
-.base {
-  font-size: var(--font-size);
-  color: hsl(0deg 100% 100%);
-  background-color: hsl(20deg 100% 60%);
+.btn,
+.glow {
+  color: var(--button-color);
+  width: 100%;
   border: none;
-  padding: 0.5rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  border-radius: 1000px 5000px 5000px 1000px;
+  position: relative;
+  background-color: var(--color);
+  padding: 1rem;
 }
 
-.base:hover .clickable,
-.base:focus .clickable {
-  transform: translateY(-25%);
-  transition: transform 200ms;
+.btnWrapper:hover {
+  font-weight: 700;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  filter: blur(var(--button-blur));
+}
+
+@media (max-width: 550px) {
+  .btnWrapper {
+    width: 35%;
+  }
 }

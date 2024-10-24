@@ -1,6 +1,6 @@
-import styles from "./BlogTypeArea.module.css";
+import styles from "./TypeArea.module.css";
 
-export default function BlogTypeArea({ label, id, ...delegated }) {
+export default function TypeArea({ label, id, ...delegated }) {
   return (
     <label htmlFor={id} className={styles.wrapper}>
       {label}

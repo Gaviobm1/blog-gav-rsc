@@ -9,22 +9,13 @@ import { S3Params } from "../../app/types";
 import { object } from "prop-types";
 import { Readable } from "stream";
 import { s3 } from "../../../db/clients";
-import { getBlog } from "@/helpers/serverActions";
+import { getBlogMDX } from "@/helpers/serverActions";
 
-export default async function BlogPage({ file }: { file: string }) {
-  if (file === "favicon.ico") {
-    return;
-  }
-  const key =
-    file
-      .split("-")
-      .map((word, index) => camelCaser(word, index))
-      .join("") + ".mdx";
-
-  const post = await getBlog(key);
+export default async function BlogPage({ id }: { id: number }) {
+  const post = await getBlogMDX(id);
   if (post) {
-    const { data, content } = matter(post);
-    const date = format(data.createdOn, "PPPP");
+    const { data, content } = post;
+    const date = format(data.published, "PPPP");
     return (
       <main className={styles.wrapper}>
         <BlogHero date={date} title={data.title} />

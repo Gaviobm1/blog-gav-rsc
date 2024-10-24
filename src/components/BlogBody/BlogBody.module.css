@@ -1,6 +1,18 @@
 .wrapper {
+  display: flex;
+  justify-content: center;
   color: var(--color);
-  padding: 2rem;
-  border-radius: 0px 0px 4px 4px;
-  width: 90%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+.content {
+  width: var(--width);
+}
+
+@media (max-width: 550px) {
+  .wrapper {
+    padding: var(--mobile-padding);
+  }
 }

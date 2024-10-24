@@ -5,7 +5,9 @@ import styles from "./BlogBody.module.css";
 export default function BlogBody({ content }: { content: string }) {
   return (
     <div className={styles.wrapper}>
-      <MDXRemote source={content} />
+      <div className={styles.content}>
+        <MDXRemote source={content} />
+      </div>
     </div>
   );
 }

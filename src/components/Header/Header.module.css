@@ -1,12 +1,18 @@
 .headernav {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
+  justify-content: center;
+  padding: 2rem var(--side-padding);
   position: sticky;
   top: 0;
   backdrop-filter: blur(10px);
+}
+
+.navWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: var(--width);
 }
 
 .navlink {
@@ -43,6 +49,10 @@
   }
 }
 
+.iconWrapper:hover {
+  color: hsl(25deg 100% 50%);
+}
+
 .logo {
   display: block;
   max-width: fit-content;
@@ -52,13 +62,16 @@
   position: relative;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 899px) {
   .buttonWrapper {
     display: none;
   }
+  .headernav {
+    padding: var(--mobile-padding);
+  }
 }
 
-@media (min-width: 551px) {
+@media (min-width: 900px) {
   .mobileWrapper {
     display: none;
   }

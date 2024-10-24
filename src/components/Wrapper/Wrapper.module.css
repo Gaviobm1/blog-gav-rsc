@@ -5,10 +5,10 @@
   grid-template-areas:
     "header"
     "content";
-  grid-template-rows: auto 1fr;
   background: var(--background-wrapper);
   gap: 2rem;
   isolation: isolate;
+  min-height: 100%;
 }
 
 @media (max-width: 550px) {

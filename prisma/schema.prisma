@@ -5,16 +5,14 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL_DIRECT")
+  directUrl = env("DATABASE_URL_DIRECT")
 }
 
 model Posts {
   id         Int       @id @default(autoincrement())
-  title      String   @db.VarChar(500)
+  post     String   @db.Text
   href       String   @db.VarChar(500)
-  abstract   String   @db.VarChar(5000)
-  key        String   @db.VarChar(500)
-  created_on DateTime @default(dbgenerated("CURRENT_DATE")) @db.Date
+  published DateTime @default(dbgenerated("CURRENT_DATE")) @db.Date
 
   @@map("posts")
 }

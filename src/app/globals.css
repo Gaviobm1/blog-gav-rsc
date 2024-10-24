@@ -1,4 +1,5 @@
 :root {
+  --side-padding: 15rem;
   --text-links-color: hsl(211deg 12% 100%);
   --link-border-color: hsl(0deg 100% 100%);
   --padding: 0.5rem;
@@ -6,6 +7,9 @@
   --animate-suspense: pulsing 900ms alternate infinite;
   --shimmer-color: hsl(0deg 10% 80%);
   --outline-offset: 4px;
+  --post-left-padding: 2rem;
+  --width: min(100%, 70ch);
+  --mobile-padding: 1rem;
 }
 
 html[data-color-theme="dark"] {
@@ -28,11 +32,20 @@ html[data-color-theme="dark"] {
     hsla(211.12, 75.17%, 4.01%, 0.763) 91.9%,
     hsla(210, 80%, 3.92%, 0.76) 100%
   );
+  --hero-background: linear-gradient(
+      330deg,
+      transparent 50%,
+      hsl(310deg 100% 15%) 50%
+    ),
+    linear-gradient(30deg, transparent 65%, hsl(310deg 100% 30%) 50%),
+    linear-gradient(150deg, transparent 70%, hsl(310deg 100% 25%) 50%),
+    linear-gradient(210deg, transparent 60%, hsl(310deg 100% 20%) 50%);
+
   --color: hsl(0deg 100% 100%);
   --box-shadow: none;
   --border: 1px solid hsl(0deg 100% 100%);
   --border-radius: none;
-  --hover-color: hsl(211deg 25% 80%);
+  --hover-color: hsl(25deg 100% 50%);
   --logo-blur: 1px;
   --button-blur: 10px;
   --button-color: hsl(0deg 100% 0%);
@@ -40,6 +53,7 @@ html[data-color-theme="dark"] {
   --button-base: hsl(0deg 100% 90%);
   --button-clickable: hsl(0deg 100% 95%);
   --button-text: hsl(0deg 100% 0%);
+  --border: 2px solid hsl(0deg 100% 100%);
 }
 
 html[data-color-theme="light"] {
@@ -47,7 +61,7 @@ html[data-color-theme="light"] {
   --box-shadow: 4px 8px 4px hsl(0deg 100% 0%/ 0.3);
   --border: 1px solid hsl(0deg 100% 0%);
   --border-radius: 0.5rem;
-  --hover-color: hsl(0deg 100% 0% / 0.6);
+  --hover-color: hsl(25deg 100% 30%);
   --logo-blur: 0px;
   --button-blur: 0px;
   --button-color: hsl(0deg 100% 100%);
@@ -70,10 +84,21 @@ html[data-color-theme="light"] {
     hsl(330.46, 23.65%, 99.87%) 91.9%,
     hsl(0, 0%, 100%) 100%
   );
+  --hero-background: radial-gradient(
+      circle at 0% 80%,
+      hsl(210deg 100% 75%/ 0.4) 50%,
+      transparent 50% 100%
+    ),
+    radial-gradient(
+      circle at 130% -75%,
+      hsl(210deg 100% 80%/ 0.6) 50%,
+      transparent 50% 100%
+    );
   --border-blur: 0px;
   --button-base: hsl(0deg 100% 10%);
   --button-clickable: hsl(0deg 100% 15%);
   --button-text: hsl(0deg 100% 100%);
+  --border: 2px solid hsl(0deg 100% 0%);
 }
 
 *,

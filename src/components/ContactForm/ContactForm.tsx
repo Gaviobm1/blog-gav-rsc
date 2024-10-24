@@ -1,8 +1,10 @@
 "use client";
 import React from "react";
 import styles from "./ContactForm.module.css";
+import Form from "../Form/Form";
 import Input from "../Input/Input";
-import BlogTypeArea from "../BlogTypeArea/BlogTypeArea";
+import TypeArea from "../TypeArea/TypeArea";
+import Button from "../Button/Button";
 import emailjs from "@emailjs/browser";
 import { redirect } from "next/navigation";
 
@@ -45,7 +47,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form className={styles.wrapper} onSubmit={sendEmail}>
+    <Form onSubmit={sendEmail}>
       <Input
         id="subject"
         label="Subject"
@@ -58,17 +60,12 @@ export default function ContactForm() {
         placeholder="juan@awesome.net"
         type="email"
       />
-      <BlogTypeArea
+      <TypeArea
         id="message"
         label="Message"
         placeholder="Hi! I'm getting in touch because..."
       />
-      <div className={styles.btnWrapper}>
-        <button type="submit" className={`${styles.btn} ${styles.glow}`} />
-        <button type="submit" className={styles.btn}>
-          Send
-        </button>
-      </div>
-    </form>
+      <Button type="submit">Send</Button>
+    </Form>
   );
 }
