@@ -11,14 +11,22 @@ export interface CardProps {
   title: string;
   abstract: string;
   href: string;
-  published: Date;
+  date: string;
 }
 
 export interface PostType {
   id: number;
   post: string;
-  href: string;
   published: Date;
+}
+
+export interface DerivedData {
+  id: number;
+  title: string;
+  href: string;
+  abstract: string;
+  content: string;
+  date: string;
 }
 
 export interface PageSearchParams {

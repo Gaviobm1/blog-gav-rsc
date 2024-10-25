@@ -2,6 +2,21 @@ import { Readable } from "stream";
 import { GetObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
 import { prisma, s3 } from "../../db/clients";
 import matter, { GrayMatterFile } from "gray-matter";
+import { PostType, DerivedData } from "@/app/types";
+import { format } from "date-fns";
+
+function deriveRecordInfo(record: PostType): DerivedData {
+  const { id, post, published } = record;
+  if (post) {
+    const { data, content } = matter(post);
+    const abstract = content.slice(0, 240);
+    const href = data.title.toLowerCase().split(" ").join("-");
+    const title = data.title;
+    const date = format(published, "PPPP");
+    return { id, title, content, href, abstract, date };
+  }
+  throw new Error("Failed to get record");
+}
 
 function camelCaser(word: string, index: number) {
   let firstLetter;
@@ -86,7 +101,6 @@ async function uploadBlog(formData: FormData) {
       prisma.posts.create({
         data: {
           post: frontMatter + blogContent,
-          href: href,
           published: createdOn,
         },
       }),
@@ -96,4 +110,4 @@ async function uploadBlog(formData: FormData) {
   }
 }
 
-export { camelCaser, range, streamToString };
+export { camelCaser, range, streamToString, deriveRecordInfo };

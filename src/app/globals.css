@@ -8,7 +8,8 @@
   --shimmer-color: hsl(0deg 10% 80%);
   --outline-offset: 4px;
   --post-left-padding: 2rem;
-  --width: min(100%, 70ch);
+  --width: min(100%, 800px);
+  --text-width: min(90%, 60ch);
   --mobile-padding: 1rem;
 }
 

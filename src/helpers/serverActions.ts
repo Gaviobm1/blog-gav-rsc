@@ -1,56 +1,45 @@
 "use server";
 import { cookies } from "next/headers";
 import { prisma } from "../../db/clients";
-import { format } from "date-fns";
+import { deriveRecordInfo } from "./helpers";
 import matter from "gray-matter";
+import { DerivedData } from "@/app/types";
 
 async function createBlogMDX(formData: FormData) {
-  const title = String(formData.get("title"));
-  const href = title.toLowerCase().split(" ").join("-");
-  const blogContent = String(formData.get("blogcontent"));
+  const post = String(formData.get("blogcontent"));
   const published = new Date();
-  const abstract = blogContent.slice(0, 240);
-  const frontMatter = `---
-  title: "${title}"
-  abstract: '${abstract}'
-  published: "${published}"
-  ---`;
-  const post = frontMatter + "\n" + blogContent;
-
   await prisma.posts.create({
     data: {
       post,
-      href,
       published,
     },
   });
 }
 
-async function getBlogMDX(id: number) {
+async function getBlogMDX(id: number): Promise<DerivedData> {
   const record = await prisma.posts.findUnique({
     where: {
       id: id,
     },
-    select: {
-      post: true,
-      published: true,
-      href: true,
-    },
   });
   if (record) {
-    const { post, href, published } = record;
-    if (post) {
-      const { data, content } = matter(post);
-      return { data, content, href, published };
-    }
+    return deriveRecordInfo(record);
   }
+  throw new Error("Record not found");
 }
 
-async function getAllPosts(toSkip: number, resultsPerPage: number) {
-  return await prisma.posts.findMany({
+async function getAllPosts(
+  toSkip: number,
+  resultsPerPage: number
+): Promise<DerivedData[]> {
+  const records = await prisma.posts.findMany({
     skip: toSkip,
     take: resultsPerPage,
   });
+  if (records) {
+    return records.map((record) => deriveRecordInfo(record));
+  }
+  throw new Error("Record not found");
 }
 
 async function getPostCount() {

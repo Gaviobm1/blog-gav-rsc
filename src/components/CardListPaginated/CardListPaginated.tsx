@@ -2,7 +2,7 @@ import CardList from "../CardList/CardList";
 import PageButtons from "../PageButtons/PageButtons";
 import React, { Suspense } from "react";
 import styles from "./CardListPaginated.module.css";
-import { PageSearchParams } from "@/app/types";
+import { PageSearchParams, PostType } from "@/app/types";
 import { getPostCount, getAllPosts } from "@/helpers/serverActions";
 
 export default async function CardListPaginated({
@@ -23,7 +23,7 @@ export default async function CardListPaginated({
 
   return (
     <div className={styles.wrapper}>
-      <CardList data={posts} />
+      <CardList cardData={posts} />
       {pages > 1 && <PageButtons current={current} pages={pages} />}
     </div>
   );

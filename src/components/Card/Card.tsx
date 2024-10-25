@@ -2,11 +2,9 @@ import Link from "next/link";
 import styles from "./Card.module.css";
 import { Suspense } from "react";
 import SkeletonCard from "@/Skeletons/SkeletonCard/SkeletonCard";
-import { format } from "date-fns";
 import { CardProps } from "@/app/types";
 
-export default function Card({ title, abstract, href, published }: CardProps) {
-  const date = format(published, "PPPP");
+export default function Card({ title, abstract, href, date }: CardProps) {
   return (
     <Suspense fallback={<SkeletonCard />}>
       <article className={styles.wrapper}>

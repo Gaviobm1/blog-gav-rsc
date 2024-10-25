@@ -10,9 +10,8 @@ datasource db {
 
 model Posts {
   id        Int       @id @default(autoincrement())
-  post      String?
-  href      String?   @db.VarChar(500)
-  published DateTime? @default(now()) @db.Timestamp(6)
+  post      String
+  published DateTime @default(now()) @db.Timestamp(6)
 
   @@map("posts")
 }

@@ -34,7 +34,7 @@
   font-weight: 100;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 850px) {
   .hero {
     border-radius: 0px;
     padding-left: var(--mobile-padding);
