@@ -8,9 +8,3 @@
 .content {
   width: var(--text-width);
 }
-
-@media (max-width: 850px) {
-  .wrapper {
-    padding: var(--mobile-padding);
-  }
-}

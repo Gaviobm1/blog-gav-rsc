@@ -4,6 +4,7 @@ import "./globals.css";
 import Wrapper from "@/components/Wrapper/Wrapper";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import Modal from "@/components/Modal/Modal";
 import { cookies } from "next/headers";
 import { links } from "@/data";
 import { DarkMode } from "./types";

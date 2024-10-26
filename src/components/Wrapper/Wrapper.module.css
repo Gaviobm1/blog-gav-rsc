@@ -2,17 +2,22 @@
   font-family: var(--raleway);
   color: var(--color);
   display: grid;
-  grid-template-areas:
-    "header"
-    "content";
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
   background: var(--background-wrapper);
-  gap: 2rem;
-  isolation: isolate;
   min-height: 100%;
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    padding-left: var(--tablet-padding);
+    padding-right: var(--tablet-padding);
+  }
 }
 
 @media (max-width: 550px) {
   .wrapper {
-    gap: 1rem;
+    padding-left: var(--mobile-padding);
+    padding-right: var(--mobile-padding);
   }
 }

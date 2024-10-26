@@ -1,11 +1,30 @@
-.mobileButton {
+.mobileButton,
+.closeButton {
   background: transparent;
   border: none;
   color: var(--color);
 }
 
+.closeButton {
+  position: absolute;
+  top: var(--mobile-padding);
+  right: 2rem;
+}
+
 .overlay {
+  display: flex;
+  justify-content: flex-end;
   position: fixed;
   inset: 0;
   background-color: hsl(0deg 100% 0% / 0.5);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 3rem;
+  gap: 2rem;
+  width: 70%;
+  background-color: var(--background-wrapper);
 }

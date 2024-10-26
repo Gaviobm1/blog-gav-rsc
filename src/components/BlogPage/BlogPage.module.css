@@ -1,5 +1,4 @@
 .wrapper {
-  grid-area: content;
   justify-self: center;
   display: flex;
   flex-direction: column;

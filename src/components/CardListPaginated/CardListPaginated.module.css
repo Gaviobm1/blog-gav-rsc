@@ -1,7 +1,6 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  grid-area: content;
   gap: 1rem;
   align-items: center;
 }

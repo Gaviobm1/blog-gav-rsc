@@ -11,28 +11,11 @@
   --width: min(100%, 800px);
   --text-width: min(90%, 60ch);
   --mobile-padding: 1rem;
+  --tablet-padding: 2rem;
 }
 
 html[data-color-theme="dark"] {
-  --background-wrapper: linear-gradient(
-    324deg,
-    hsla(327.69, 86.67%, 2.94%, 0.98) 0%,
-    hsla(327.6, 80.49%, 3.02%, 0.977) 8.1%,
-    hsla(326.17, 70.01%, 3.15%, 0.969) 15.5%,
-    hsla(322.57, 59.58%, 3.26%, 0.957) 22.5%,
-    hsla(316.12, 49.66%, 3.34%, 0.941) 29%,
-    hsla(305.45, 40.15%, 3.38%, 0.923) 35.3%,
-    hsla(289.46, 35.13%, 3.62%, 0.903) 41.2%,
-    hsla(273.28, 33.19%, 3.96%, 0.881) 47.1%,
-    hsla(257.83, 31.79%, 4.28%, 0.859) 52.9%,
-    hsla(243.25, 30.77%, 4.57%, 0.837) 58.8%,
-    hsla(231.1, 37.19%, 4.58%, 0.817) 64.7%,
-    hsla(223.21, 46.21%, 4.48%, 0.799) 71%,
-    hsla(217.75, 55.75%, 4.34%, 0.783) 77.5%,
-    hsla(213.82, 65.71%, 4.18%, 0.771) 84.5%,
-    hsla(211.12, 75.17%, 4.01%, 0.763) 91.9%,
-    hsla(210, 80%, 3.92%, 0.76) 100%
-  );
+  --background-wrapper: hsl(0deg 20% 7%);
   --hero-background: linear-gradient(
       330deg,
       transparent 50%,
@@ -66,25 +49,7 @@ html[data-color-theme="light"] {
   --logo-blur: 0px;
   --button-blur: 0px;
   --button-color: hsl(0deg 100% 100%);
-  --background-wrapper: linear-gradient(
-    324deg,
-    hsl(330, 25%, 89.02%) 0%,
-    hsl(330.01, 24.98%, 89.17%) 8.1%,
-    hsl(330.03, 24.92%, 89.59%) 15.5%,
-    hsl(330.06, 24.83%, 90.23%) 22.5%,
-    hsl(330.1, 24.72%, 91.05%) 29%,
-    hsl(330.14, 24.6%, 92%) 35.3%,
-    hsl(330.19, 24.46%, 93.04%) 41.2%,
-    hsl(330.24, 24.33%, 94.13%) 47.1%,
-    hsl(330.28, 24.19%, 95.23%) 52.9%,
-    hsl(330.32, 24.06%, 96.29%) 58.8%,
-    hsl(330.36, 23.94%, 97.28%) 64.7%,
-    hsl(330.4, 23.84%, 98.17%) 71%,
-    hsl(330.42, 23.76%, 98.92%) 77.5%,
-    hsl(330.44, 23.69%, 99.5%) 84.5%,
-    hsl(330.46, 23.65%, 99.87%) 91.9%,
-    hsl(0, 0%, 100%) 100%
-  );
+  --background-wrapper: hsl(0deg 40% 93%);
   --hero-background: radial-gradient(
       circle at 0% 80%,
       hsl(210deg 100% 75%/ 0.4) 50%,
@@ -94,7 +59,8 @@ html[data-color-theme="light"] {
       circle at 130% -75%,
       hsl(210deg 100% 80%/ 0.6) 50%,
       transparent 50% 100%
-    );
+    ),
+    var(--background-wrapper);
   --border-blur: 0px;
   --button-base: hsl(0deg 100% 10%);
   --button-clickable: hsl(0deg 100% 15%);

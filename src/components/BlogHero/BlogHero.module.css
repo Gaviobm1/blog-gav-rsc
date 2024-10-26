@@ -34,11 +34,33 @@
   font-weight: 100;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 550px) {
   .hero {
     border-radius: 0px;
-    padding-left: var(--mobile-padding);
+    padding: 5rem 0rem;
   }
+
+  .wrapper {
+    padding-left: var(--mobile-padding);
+    width: calc(100% + 2 * var(--mobile-padding));
+  }
+
+  .glow {
+    border-radius: 0px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    border-radius: 0px;
+    padding: 7rem 0rem;
+  }
+
+  .wrapper {
+    padding-left: var(--tablet-padding);
+    width: calc(100% + 2 * var(--tablet-padding));
+  }
+
   .glow {
     border-radius: 0px;
   }

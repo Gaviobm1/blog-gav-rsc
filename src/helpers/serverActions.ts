@@ -2,11 +2,14 @@
 import { cookies } from "next/headers";
 import { prisma } from "../../db/clients";
 import { deriveRecordInfo } from "./helpers";
-import matter from "gray-matter";
+import { z } from "zod";
 import { DerivedData } from "@/app/types";
+import { redirect } from "next/navigation";
 
 async function createBlogMDX(formData: FormData) {
+  const blogSchema = z.string().min(1);
   const post = String(formData.get("blogcontent"));
+  console.log(blogSchema.parse(post));
   const published = new Date();
   await prisma.posts.create({
     data: {
@@ -14,6 +17,7 @@ async function createBlogMDX(formData: FormData) {
       published,
     },
   });
+  redirect("/");
 }
 
 async function getBlogMDX(id: number): Promise<DerivedData> {

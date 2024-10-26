@@ -39,7 +39,15 @@ export default function Header({ theme }: { theme: DarkMode }) {
 
         <div className={styles.mobileWrapper}>
           <DarkModeButton theme={theme} />
-          <Modal />
+          <Modal>
+            <Link href="/contact">Contact</Link>
+            <Link href="/about">About me</Link>
+            <Link href="https://www.linkedin.com/in/gavinobrien90/">
+              LinkedIn
+            </Link>
+            <Link href="https://github.com/Gaviobm1">Github</Link>
+            <Link href="/upload">Upload Blog (Admin only)</Link>
+          </Modal>
         </div>
       </div>
     </nav>
