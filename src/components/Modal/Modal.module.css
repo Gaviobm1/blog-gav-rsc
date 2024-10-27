@@ -7,8 +7,8 @@
 
 .closeButton {
   position: absolute;
-  top: var(--mobile-padding);
-  right: 2rem;
+  top: var(--tablet-padding);
+  right: var(--tablet-padding);
 }
 
 .overlay {
@@ -20,6 +20,7 @@
 }
 
 .menu {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,4 +28,11 @@
   gap: 2rem;
   width: 70%;
   background-color: var(--background-wrapper);
+}
+
+@media (max-width: 550px) {
+  .closeButton {
+    top: var(--mobile-padding);
+    right: var(--mobile-padding);
+  }
 }

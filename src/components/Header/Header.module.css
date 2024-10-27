@@ -81,12 +81,6 @@
 }
 
 @media (max-width: 550px) {
-  .buttonWrapper {
-    display: none;
-  }
-  .mobileWrapper {
-    display: flex;
-  }
   .headernav {
     padding: 1rem var(--mobile-padding);
     margin-left: calc(var(--mobile-padding) * -1);
