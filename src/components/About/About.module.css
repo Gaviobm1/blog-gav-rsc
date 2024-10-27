@@ -1,0 +1,47 @@
+.wrapper {
+  margin-top: 1rem;
+  justify-self: center;
+  width: var(--width);
+  display: flex;
+}
+
+.pictureWrapper {
+  position: relative;
+}
+
+.image,
+.backglow {
+  border-radius: 50%;
+  position: relative;
+}
+
+.backglow {
+  position: absolute;
+  inset: 0;
+  filter: var(--picture-blur);
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .image,
+  .backglow {
+    width: 350px;
+    height: 350px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 550px) {
+  .wrapper {
+    gap: 1rem;
+  }
+  .image,
+  .backglow {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+  }
+}

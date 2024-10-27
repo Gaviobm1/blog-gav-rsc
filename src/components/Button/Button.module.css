@@ -14,14 +14,23 @@
   padding: 1rem;
 }
 
-.btnWrapper:hover {
-  font-weight: 700;
+.btnText {
+  display: block;
+  transition: transform 600ms;
 }
 
 .glow {
   position: absolute;
   inset: 0;
   filter: blur(var(--button-blur));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .btnWrapper:hover .btnText,
+  .btnWrapper:focus .btnText {
+    transform: scale(1.2);
+    transition: transform 200ms;
+  }
 }
 
 @media (max-width: 550px) {

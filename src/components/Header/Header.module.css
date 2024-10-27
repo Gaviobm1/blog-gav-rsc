@@ -6,6 +6,7 @@
   padding-bottom: 2rem;
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
 .navWrapper {
@@ -34,11 +35,6 @@
   display: none;
 }
 
-.navlink:hover,
-.navlink:focus {
-  color: var(--hover-color);
-}
-
 .iconWrapper {
   display: flex;
   align-items: center;
@@ -46,15 +42,19 @@
   width: 48px;
   height: 48px;
   border: none;
-
+  transition: transform 600ms;
   @media (max-width: 550px) {
     height: 1.5rem;
     width: 1.5rem;
   }
 }
 
-.iconWrapper:hover {
-  color: hsl(25deg 100% 50%);
+.mobileLink {
+  width: fit-content;
+  outline-offset: var(--outline-offset);
+  font-weight: 600;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .logo {
@@ -64,6 +64,14 @@
   font-size: clamp(1.25rem, 2.5vw, 2rem);
   font-variation-settings: "MONO" 0.47, "wght" 723;
   position: relative;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .iconWrapper:hover,
+  .iconWrapper:focus {
+    transform: scale(1.2);
+    transition: transform 200ms;
+  }
 }
 
 @media (max-width: 900px) {

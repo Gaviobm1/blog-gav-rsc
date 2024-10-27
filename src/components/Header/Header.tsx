@@ -1,8 +1,10 @@
 import Link from "next/link";
 import styles from "./Header.module.css";
-import { Mail, Linkedin, User, GitHub, Upload } from "react-feather";
+import { Home, Mail, Linkedin, User, GitHub, Upload } from "react-feather";
 import DarkModeButton from "../DarkModeButton/DarkModeButton";
 import Modal from "@/components/Modal/Modal";
+import MobileLink from "../MobileLink/MobileLink";
+import { links } from "@/data";
 import { DarkMode } from "@/app/types";
 
 export default function Header({ theme }: { theme: DarkMode }) {
@@ -40,13 +42,14 @@ export default function Header({ theme }: { theme: DarkMode }) {
         <div className={styles.mobileWrapper}>
           <DarkModeButton theme={theme} />
           <Modal>
-            <Link href="/contact">Contact</Link>
-            <Link href="/about">About me</Link>
-            <Link href="https://www.linkedin.com/in/gavinobrien90/">
-              LinkedIn
-            </Link>
-            <Link href="https://github.com/Gaviobm1">Github</Link>
-            <Link href="/upload">Upload Blog (Admin only)</Link>
+            {links.map(({ href, text, icon }) => {
+              return (
+                <MobileLink href={href} key={href}>
+                  {icon}
+                  {text}
+                </MobileLink>
+              );
+            })}
           </Modal>
         </div>
       </div>

@@ -1,46 +1,15 @@
+import { Home, Mail, Linkedin, User, GitHub, Upload } from "react-feather";
+
 const links = [
-  { href: "/", text: "Home" },
-  { href: "/contact", text: "Contact" },
-  { href: "/search", text: "Search" },
-  { href: "/upload", text: "Upload" },
+  { href: "/", text: "Home", icon: <Home /> },
+  { href: "/contact", text: "Contact", icon: <Mail /> },
+  { href: "/about", text: "About me", icon: <User /> },
+  {
+    href: "https://www.linkedin.com/in/gavinobrien90/",
+    text: "LinkedIn",
+    icon: <Linkedin />,
+  },
+  { href: "https://github.com/Gaviobm1", text: "GitHub", icon: <GitHub /> },
 ];
 
-const posts = [
-  {
-    href: "posts/how-to-herd-a-cat",
-    title: "How to herd a cat",
-    abstract:
-      "Training cats involves positive reinforcement techniques, consistency, and patience to encourage desired behaviors, strengthen bonds, and enhance their well-being.",
-    created_on: new Date(),
-  },
-  {
-    href: "./",
-    title: "How to herd a cat",
-    abstract:
-      "Training cats involves positive reinforcement techniques, consistency, and patience to encourage desired behaviors, strengthen bonds, and enhance their well-being.",
-    created_on: new Date(),
-  },
-  {
-    href: "./",
-    title: "How to herd a cat",
-    abstract:
-      "Training cats involves positive reinforcement techniques, consistency, and patience to encourage desired behaviors, strengthen bonds, and enhance their well-being.",
-    created_on: new Date(),
-  },
-  {
-    href: "./",
-    title: "How to herd a cat",
-    abstract:
-      "Training cats involves positive reinforcement techniques, consistency, and patience to encourage desired behaviors, strengthen bonds, and enhance their well-being.",
-    created_on: new Date(),
-  },
-  {
-    href: "./",
-    title: "How to herd a cat",
-    abstract:
-      "Training cats involves positive reinforcement techniques, consistency, and patience to encourage desired behaviors, strengthen bonds, and enhance their well-being.",
-    created_on: new Date(),
-  },
-];
-
-export { links, posts };
+export { links };

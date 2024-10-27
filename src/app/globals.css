@@ -38,6 +38,7 @@ html[data-color-theme="dark"] {
   --button-clickable: hsl(0deg 100% 95%);
   --button-text: hsl(0deg 100% 0%);
   --border: 2px solid hsl(0deg 100% 100%);
+  --picture-blur: blur(10px);
 }
 
 html[data-color-theme="light"] {
@@ -66,6 +67,7 @@ html[data-color-theme="light"] {
   --button-clickable: hsl(0deg 100% 15%);
   --button-text: hsl(0deg 100% 100%);
   --border: 2px solid hsl(0deg 100% 0%);
+  --picture-blur: none;
 }
 
 *,

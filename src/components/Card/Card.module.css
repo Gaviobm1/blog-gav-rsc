@@ -37,21 +37,6 @@
   width: max-content;
 }
 
-.explicitLink svg {
-  align-self: flex-end;
-  transition: transform 600ms;
-}
-
-.explicitLink:hover,
-.explicitLink:focus {
-  font-weight: 700;
-}
-
-.explicitLink:hover svg {
-  transform: scale(1.2);
-  transition: transform 200ms;
-}
-
 .published {
   font-family: var(--recursive);
   font-weight: 200;

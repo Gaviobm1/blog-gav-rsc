@@ -11,7 +11,7 @@ export default function Button({
     <div className={styles.btnWrapper}>
       <button className={`${styles.btn} ${styles.glow}`} />
       <button type={type} className={styles.btn}>
-        {children}
+        <span className={styles.btnText}>{children}</span>
       </button>
     </div>
   );

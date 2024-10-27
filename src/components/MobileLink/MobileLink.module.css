@@ -1,0 +1,7 @@
+.mobileLink {
+  width: fit-content;
+  outline-offset: var(--outline-offset);
+  font-weight: 600;
+  display: flex;
+  gap: 0.5rem;
+}

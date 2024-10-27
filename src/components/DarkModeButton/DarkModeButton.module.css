@@ -9,10 +9,18 @@
   color: var(--color);
 }
 
+.wrapper svg {
+  transition: transform 600ms;
+}
+
 .wrapper:hover {
   cursor: pointer;
 }
 
-.wrapper:hover svg {
-  color: var(--hover-color);
+@media (prefers-reduced-motion: no-preference) {
+  .wrapper:hover svg,
+  .wrapper:focus svg {
+    transform: scale(1.2);
+    transition: transform 200ms;
+  }
 }
