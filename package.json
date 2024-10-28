@@ -15,9 +15,12 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.670.0",
     "@emailjs/browser": "^4.4.1",
+    "@mdx-js/react": "^3.1.0",
+    "@next/mdx": "^15.0.1",
     "@prisma/client": "^5.21.1",
     "@radix-ui/react-dialog": "^1.1.2",
     "@smithy/types": "^3.5.0",
+    "@types/mdx": "^2.0.13",
     "@types/node": "^22.7.6",
     "@types/react": "^18.3.11",
     "buffer": "^6.0.3",

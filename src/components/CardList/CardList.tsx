@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Card from "../Card/Card";
 import styles from "./CardList.module.css";
-import { CardProps, DerivedData } from "@/app/types.js";
+import { CardProps, DerivedData } from "@/types/types.js";
 import matter from "gray-matter";
 
 export default function CardList({

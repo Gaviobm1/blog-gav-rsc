@@ -1,6 +1,6 @@
 import { FormEventHandler } from "react";
 import styles from "./Form.module.css";
-import { FormProps } from "@/app/types";
+import { FormProps } from "@/types/types";
 
 export default function Form({ children, onSubmit, ...delegated }: FormProps) {
   return (

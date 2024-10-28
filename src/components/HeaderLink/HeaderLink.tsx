@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import styles from "./MobileLink.module.css";
+import styles from "./HeaderLink.module.css";
 
-export default function MobileLink({
+export default function HeaderLink({
   children,
   href,
 }: {

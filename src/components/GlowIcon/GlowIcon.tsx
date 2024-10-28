@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import styles from "./GlowIcon.module.css";
-import { IconProps } from "@/app/types";
+import { IconProps } from "@/types/types";
 
 export default function GlowIcon({ children }: IconProps) {
   return (

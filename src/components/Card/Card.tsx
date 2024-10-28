@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "./Card.module.css";
 import { Suspense } from "react";
 import SkeletonCard from "@/Skeletons/SkeletonCard/SkeletonCard";
-import { CardProps } from "@/app/types";
+import { CardProps } from "@/types/types";
 
 export default function Card({ title, abstract, href, date }: CardProps) {
   return (

@@ -2,7 +2,7 @@ import { Readable } from "stream";
 import { GetObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
 import { prisma, s3 } from "../../db/clients";
 import matter, { GrayMatterFile } from "gray-matter";
-import { PostType, DerivedData } from "@/app/types";
+import { PostType, DerivedData } from "@/types/types";
 import { format } from "date-fns";
 import emailjs from "@emailjs/browser";
 import { redirect } from "next/navigation";

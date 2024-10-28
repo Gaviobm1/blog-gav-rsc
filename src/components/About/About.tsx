@@ -5,13 +5,13 @@ import styles from "./About.module.css";
 export default async function About({
   src,
   alt,
-  title,
   content,
+  components,
 }: {
   src: string;
   alt: string;
-  title: string;
   content: string;
+  components: any;
 }) {
   return (
     <main className={styles.wrapper}>
@@ -31,9 +31,8 @@ export default async function About({
           className={styles.image}
         />
       </div>
-      <section>
-        <h1>{title}</h1>
-        <MDXRemote source={content} />
+      <section className={styles.textWrapper}>
+        <MDXRemote source={content} components={components} />
       </section>
     </main>
   );

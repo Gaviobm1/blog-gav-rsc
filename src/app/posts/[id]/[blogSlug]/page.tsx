@@ -1,5 +1,5 @@
 import BlogPage from "@/components/BlogPage/BlogPage";
-import { BlogParam } from "../../../types";
+import { BlogParam } from "../../../../types/types";
 
 export default function BlogPost({ params }: { params: BlogParam }) {
   const id = Number(params?.id) || 0;

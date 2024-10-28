@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 import { prisma } from "../../db/clients";
 import { deriveRecordInfo } from "./helpers";
 import { z } from "zod";
-import { DerivedData } from "@/app/types";
+import { DerivedData } from "@/types/types";
 import { redirect } from "next/navigation";
 
 async function createBlogMDX(formData: FormData) {

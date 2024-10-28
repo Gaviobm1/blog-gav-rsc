@@ -1,53 +1,47 @@
 import Link from "next/link";
 import styles from "./Header.module.css";
-import { Home, Mail, Linkedin, User, GitHub, Upload } from "react-feather";
 import DarkModeButton from "../DarkModeButton/DarkModeButton";
 import Modal from "@/components/Modal/Modal";
-import MobileLink from "../MobileLink/MobileLink";
+import HeaderLink from "../HeaderLink/HeaderLink";
 import { links } from "@/data";
-import { DarkMode } from "@/app/types";
+import { DarkMode } from "@/types/types";
 
 export default function Header({ theme }: { theme: DarkMode }) {
   return (
-    <nav className={styles.headernav}>
+    <nav className={styles.headerNav}>
       <div className={styles.navWrapper}>
-        <Link href="/" className={styles.navlink}>
+        <Link href="/">
           <span className={styles.logo}>Gavin O&apos;Brien</span>
         </Link>
-        <div className={styles.buttonWrapper}>
+        <div className={styles.desktopWrapper}>
           <DarkModeButton theme={theme} />
-          <Link href="/contact" className={styles.iconWrapper}>
-            <Mail />
-          </Link>
-          <Link href="/about" className={styles.iconWrapper}>
-            <User />
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/gavinobrien90/"
-            className={styles.iconWrapper}
-          >
-            <Linkedin />
-          </Link>
-          <Link
-            href="https://github.com/Gaviobm1"
-            className={styles.iconWrapper}
-          >
-            <GitHub />
-          </Link>
-          <Link href="/upload" className={styles.iconWrapper}>
-            <Upload />
-          </Link>
+          {links.map(({ href, text }) => {
+            return (
+              <HeaderLink href={href} key={href}>
+                {text}
+              </HeaderLink>
+            );
+          })}
         </div>
-
+        <div className={styles.tabletWrapper}>
+          <DarkModeButton theme={theme} />
+          {links.map(({ href, icon }) => {
+            return (
+              <HeaderLink href={href} key={href}>
+                {icon}
+              </HeaderLink>
+            );
+          })}
+        </div>
         <div className={styles.mobileWrapper}>
           <DarkModeButton theme={theme} />
           <Modal>
             {links.map(({ href, text, icon }) => {
               return (
-                <MobileLink href={href} key={href}>
+                <HeaderLink href={href} key={href}>
                   {icon}
                   {text}
-                </MobileLink>
+                </HeaderLink>
               );
             })}
           </Modal>

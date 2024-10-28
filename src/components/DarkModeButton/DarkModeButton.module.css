@@ -1,12 +1,10 @@
 .wrapper {
   border: none;
-  padding: 0.4rem;
   overflow: hidden;
   outline-offset: var(--outline-offset);
   background: transparent;
-  width: 48px;
-  height: 48px;
   color: var(--color);
+  overflow: visible;
 }
 
 .wrapper svg {

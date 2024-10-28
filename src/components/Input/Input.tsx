@@ -1,5 +1,5 @@
 import styles from "./Input.module.css";
-import { InputProps } from "@/app/types";
+import { InputProps } from "@/types/types";
 
 export default function Input({
   label,

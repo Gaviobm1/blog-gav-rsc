@@ -2,7 +2,7 @@ import CardList from "../CardList/CardList";
 import PageButtons from "../PageButtons/PageButtons";
 import React, { Suspense } from "react";
 import styles from "./CardListPaginated.module.css";
-import { PageSearchParams, PostType } from "@/app/types";
+import { PageSearchParams, PostType } from "@/types/types";
 import { getPostCount, getAllPosts } from "@/helpers/serverActions";
 
 export default async function CardListPaginated({

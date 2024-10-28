@@ -3,10 +3,16 @@
   justify-self: center;
   width: var(--width);
   display: flex;
+  gap: 1rem;
 }
 
 .pictureWrapper {
+  flex: 1;
   position: relative;
+}
+
+.textWrapper {
+  flex: 1;
 }
 
 .image,

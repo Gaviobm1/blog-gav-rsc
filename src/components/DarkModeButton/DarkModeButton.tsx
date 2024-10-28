@@ -3,7 +3,7 @@ import { Sun, Moon } from "react-feather";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./DarkModeButton.module.css";
 import React from "react";
-import { DarkMode } from "@/app/types";
+import { DarkMode } from "@/types/types";
 import { setCookie } from "@/helpers/serverActions";
 
 export default function DarkModeButton({ theme }: { theme: DarkMode }) {

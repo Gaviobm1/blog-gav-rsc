@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import SkeletonCardList from "@/Skeletons/SkeletonCardList/SkeletonCardList";
-import { PageSearchParams } from "./types";
+import { PageSearchParams } from "../types/types";
 import CardListPaginated from "@/components/CardListPaginated/CardListPaginated";
 
 const CardList = dynamic(() => import("@/components/CardList/CardList"), {
