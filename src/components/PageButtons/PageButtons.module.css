@@ -9,6 +9,7 @@
 .pagebutton,
 .current,
 .deactivated {
+  color: var(--color);
   flex: 1;
   border: none;
   background: none;
