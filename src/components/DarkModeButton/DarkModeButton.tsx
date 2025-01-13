@@ -28,7 +28,7 @@ export default function DarkModeButton({ theme }: { theme: DarkMode }) {
             exit={{ y: -50, transition: { duration: 0.15 } }}
             transition={{ type: "spring", stiffness: 500, damping: 30 }}
           >
-            <Moon style={{ margin: "auto" }} />
+            <Moon style={{ margin: "auto" }} size={20} />
           </motion.div>
         ) : (
           <>
@@ -40,7 +40,7 @@ export default function DarkModeButton({ theme }: { theme: DarkMode }) {
               exit={{ y: 50, transition: { duration: 0.15 } }}
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
             >
-              <Sun style={{ margin: "auto" }} />
+              <Sun style={{ margin: "auto" }} size={20} />
             </motion.div>
           </>
         )}
