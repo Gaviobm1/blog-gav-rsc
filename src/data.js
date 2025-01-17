@@ -2,7 +2,6 @@ import { Home, Mail, Linkedin, User, GitHub, Upload } from "react-feather";
 
 const links = [
   { href: "/", text: "Home", icon: <Home /> },
-  { href: "/contact", text: "Contact", icon: <Mail /> },
   { href: "/about", text: "About me", icon: <User /> },
   {
     href: "https://www.linkedin.com/in/gavinobrien90/",
