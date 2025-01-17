@@ -1,15 +1,22 @@
 "use client";
 import React from "react";
-import styles from "./ContactForm.module.css";
 import Form from "../Form/Form";
 import Input from "../Input/Input";
 import TypeArea from "../TypeArea/TypeArea";
 import Button from "../Button/Button";
 import { sendEmail } from "@/helpers/helpers";
+import { useRouter } from "next/navigation";
 
 export default function ContactForm() {
+  console.log(process.env.NODE_ENV);
+  const router = useRouter();
   return (
-    <Form onSubmit={sendEmail}>
+    <Form
+      onSubmit={(e) => {
+        sendEmail(e);
+        router.push("/");
+      }}
+    >
       <Input
         id="subject"
         label="Subject"

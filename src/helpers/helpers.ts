@@ -5,7 +5,7 @@ import matter, { GrayMatterFile } from "gray-matter";
 import { PostType, DerivedData } from "@/types/types";
 import { format } from "date-fns";
 import emailjs from "@emailjs/browser";
-import { redirect } from "next/navigation";
+
 import { z } from "zod";
 
 async function sendEmail(e: React.FormEvent<HTMLFormElement>) {
@@ -18,8 +18,13 @@ async function sendEmail(e: React.FormEvent<HTMLFormElement>) {
     message: z.string().min(1),
   });
 
+  const env = process.env.NODE_ENV;
+
   emailjs.init({
-    publicKey: process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY,
+    publicKey:
+      env === "development"
+        ? process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY
+        : process.env.EMAIL_PUBLIC_KEY,
   });
 
   const form = e.target as HTMLFormElement;
@@ -40,20 +45,25 @@ async function sendEmail(e: React.FormEvent<HTMLFormElement>) {
 
   contactSchema.parse(params);
 
+  const serviceID =
+    env === "development"
+      ? process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID
+      : process.env.EMAIL_SERVICE_ID;
+
+  const templateID =
+    env === "development"
+      ? process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID
+      : process.env.EMAIL_TEMPLATE_ID;
+
   try {
     await emailjs
-      .send(
-        process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID || "",
-        process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID || "",
-        params
-      )
+      .send(serviceID || "", templateID || "", params)
       .then((data) => {
         console.log(`Successfully sent: ${data.status} ${data.text}`);
       })
       .catch((error) => {
         console.log(`Error: ${error}`);
       });
-    redirect("/");
   } catch (err) {
     console.log(err);
   }
