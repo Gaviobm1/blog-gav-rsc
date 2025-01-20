@@ -5,7 +5,7 @@ const links = [
   { href: "/about", text: "About me", icon: <User /> },
   {
     href: "https://www.linkedin.com/in/gavinobrien90/",
-    text: "LinkedIn",
+    text: "Linkedin",
     icon: <Linkedin />,
   },
   { href: "https://github.com/Gaviobm1", text: "GitHub", icon: <GitHub /> },
